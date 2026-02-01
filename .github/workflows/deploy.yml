@@ -1,0 +1,22 @@
+name: Deploy (iot-gewulogic)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    # Prefer running directly on the target host via self-hosted runner.
+    # If you have a specific runner label, add it here (e.g. iot-gewulogic).
+    runs-on: [self-hosted]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy on host (git pull + docker compose)
+        shell: bash
+        run: |
+          chmod +x ./scripts/deploy.sh
+          ./scripts/deploy.sh
