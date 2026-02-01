@@ -10,29 +10,21 @@
    ```
 2. Traefik 已配置 `websecure` entrypoint（通常是 443），并能自动签发/加载证书。
 
-## 部署方式 A：GitHub Self-hosted Actions（推荐）
+## 部署方式 A：GitHub Actions (GitHub-hosted)
 
-### 1) 在 iot-gewulogic 上安装 self-hosted runner
-在 GitHub 仓库 Settings → Actions → Runners → New self-hosted runner，按提示在 **iot-gewulogic** 上执行安装。
+### 1) 配置 GitHub Secrets
+在 GitHub 仓库 **Settings → Secrets and variables → Actions** 中添加以下密钥：
+- `SSH_HOST`: `iot-gewulogic` 的 IP 地址或域名。
+- `SSH_USER`: 登录用户名。
+- `SSH_PRIVATE_KEY`: 对应的 SSH 私钥（用于免密登录）。
 
-建议：
-- runner 用户加入 docker 组（能执行 docker）
-- 给 runner 增加 label：`iot-gewulogic`（可选，便于区分）
-
-### 2) 配置 Traefik（仅一次）
-Traefik 目录：`~/code/traefik-public/`。
-确保它能跑起来，并且已经创建 external network：
-```bash
-docker network ls | grep traefik-public || docker network create traefik-public
-```
+### 2) 配置 SSH 访问与 Git 权限
+- 确保 `iot-gewulogic` 上的 `SSH_USER` 有权运行 `docker` 命令。
+- 确保 `iot-gewulogic` 已经配置了访问此 Private 仓库的 **Deploy Key**（或 SSH 权限），以便能执行 `git clone/pull`。
 
 ### 3) 触发部署
-- push 到 `main` 分支会自动触发 `.github/workflows/deploy.yml`
-- 或在 GitHub Actions 页面手动运行（workflow_dispatch）
-
-部署脚本会在目标机执行：
-- `/srv/gewulogic-site` 下 clone / 更新代码
-- `docker compose up -d --build`
+- push 到 `main` 分支会自动触发。
+- 流程：GitHub Runner 连接到主机 → `cd /srv/gewulogic-site` → `git pull` → `docker compose up -d --build`。
 
 ## 部署方式 B：手动部署（备用）
 ```bash
