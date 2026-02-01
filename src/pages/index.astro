@@ -1,0 +1,298 @@
+---
+import "../styles/global.css";
+
+const company = {
+  name: "东莞格物数衍科技有限公司",
+  short: "格物",
+  slogan: "工业数据采集与MES解决方案",
+};
+
+const nav = [
+  { href: "#solutions", label: "解决方案" },
+  { href: "#products", label: "产品" },
+  { href: "#delivery", label: "交付" },
+  { href: "#contact", label: "联系" },
+];
+
+const solutions = [
+  {
+    title: "工业数采",
+    desc: "多协议接入、边缘采集、数据清洗与治理，为MES/ERP提供高质量工业数据底座。",
+    bullets: ["设备/网关接入", "MQTT/消息总线", "时序数据存储", "告警与健康监测"],
+  },
+  {
+    title: "MES（主线）",
+    desc: "围绕生产过程透明化与可追溯，支撑计划、执行、质量、设备与报工协同。",
+    bullets: ["工单/工序", "报工与追溯", "质检与异常", "看板与指标"],
+  },
+  {
+    title: "ERP（辅线）",
+    desc: "以制造企业运营管理为辅线，打通采购、库存、成本与财务相关流程。",
+    bullets: ["基础主数据", "采购/库存", "成本核算", "与MES联动"],
+  },
+];
+
+const products = [
+  {
+    name: "Hive",
+    tagline: "多租户 IoT 平台与遥测数据管道",
+    desc: "面向网关与设备接入的工业物联平台，支持多租户隔离、遥测数据高吞吐入库、命令下发与管理端可视化。",
+    highlights: ["EMQX + NATS + TDengine 遥测管道", "租户隔离（Hybrid schema）", "网关激活与命令控制"],
+  },
+  {
+    name: "Gearjob",
+    tagline: "面向制造现场的业务扩展（MES/ERP 联动）",
+    desc: "基于 Frappe/ERPNext 的定制化应用，用于承载制造业务流程、工单与质量等场景扩展，支持内部交付与快速迭代。",
+    highlights: ["生产管理脚本与扩展", "质量/工单等流程增强", "可 Docker / K8s 部署"],
+  },
+];
+
+const delivery = [
+  {
+    title: "内部交付 · 轻量部署",
+    desc: "以静态官网 + Docker Nginx 部署为默认形态，快速上线、易回滚。",
+  },
+  {
+    title: "方案落地 · 快速对接",
+    desc: "提供网关/设备对接规范、主题结构、签名与防重放等建议，缩短接入周期。",
+  },
+  {
+    title: "迭代支持 · 可扩展",
+    desc: "从 PoC 到产线扩容，支持逐步引入监控、日志、灰度与自动化发布。",
+  },
+];
+
+const faqs = [
+  {
+    q: "是否支持多租户与权限隔离？",
+    a: "支持。Hive 采用混合 schema 的多租户架构，保证数据与访问严格隔离；同时支持超管跨租户管理。",
+  },
+  {
+    q: "数采侧常用哪些组件？",
+    a: "参考 Hive 的遥测管道：MQTT Broker（如 EMQX）、消息总线（NATS）、时序库（TDengine）及管理端 API/前端。",
+  },
+  {
+    q: "交付形态是什么？",
+    a: "内部交付为主。官网用于方案介绍与文档入口；业务系统按需以 Docker Compose 或 K8s 部署。",
+  },
+];
+
+const contact = {
+  name: company.short,
+  phone: "（占位）", // TODO
+  email: "（占位）", // TODO
+  address: "（占位）", // TODO
+};
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`${company.name}｜数采为主，MES为主线，ERP为辅线的工业数字化解决方案。`} />
+    <title>{company.short}｜工业数采与MES解决方案</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="#" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-300 shadow-lg shadow-blue-500/20" aria-label="logo placeholder"></div>
+          <div class="leading-tight">
+            <div class="text-sm font-semibold tracking-wide text-white">{company.short}</div>
+            <div class="text-xs text-slate-400">{company.name}</div>
+          </div>
+        </a>
+
+        <nav class="hidden gap-6 text-sm text-slate-300 md:flex">
+          {nav.map((n) => (
+            <a class="hover:text-white" href={n.href}>{n.label}</a>
+          ))}
+        </nav>
+
+        <a href="#contact" class="rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500">
+          预约沟通
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(800px_circle_at_10%_10%,rgba(59,130,246,0.35),transparent_60%),radial-gradient(700px_circle_at_90%_20%,rgba(34,211,238,0.25),transparent_55%)]"></div>
+      <div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+            内部交付 · 轻量部署 · 商务蓝色系
+          </p>
+          <h1 class="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
+            {company.slogan}
+          </h1>
+          <p class="mt-4 text-base leading-relaxed text-slate-300">
+            以<strong class="text-slate-100">工业数据采集</strong>为底座，贯通<strong class="text-slate-100">MES 生产执行</strong>主线，
+            并与<strong class="text-slate-100">ERP</strong>辅线协同，帮助制造企业实现设备互联、过程透明与可追溯。
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#products" class="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500">查看产品</a>
+            <a href="#solutions" class="rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/10">了解方案</a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-3 gap-3 text-xs text-slate-300">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div class="text-white/90 font-semibold">数采</div>
+              <div class="mt-1 text-slate-400">设备/网关接入</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div class="text-white/90 font-semibold">MES</div>
+              <div class="mt-1 text-slate-400">生产过程协同</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div class="text-white/90 font-semibold">ERP</div>
+              <div class="mt-1 text-slate-400">运营管理联动</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl shadow-blue-500/10">
+            <div class="text-sm font-semibold text-white">参考架构（概览）</div>
+            <div class="mt-3 space-y-3 text-sm text-slate-300">
+              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
+                <div class="font-semibold text-slate-100">采集接入</div>
+                <div class="text-slate-400">网关/设备 → MQTT（EMQX）</div>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
+                <div class="font-semibold text-slate-100">消息与管道</div>
+                <div class="text-slate-400">消息总线（NATS）→ 消费处理</div>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
+                <div class="font-semibold text-slate-100">存储与服务</div>
+                <div class="text-slate-400">时序库（TDengine）+ 元数据（PostgreSQL）</div>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
+                <div class="font-semibold text-slate-100">应用层</div>
+                <div class="text-slate-400">MES 主线 + ERP 辅线 + 看板与追溯</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44 rounded-full bg-blue-600/20 blur-3xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-bold text-white">解决方案</h2>
+      <p class="mt-2 text-slate-300">围绕制造企业的“数据底座 → 执行主线 → 运营协同”构建可落地的工业数字化能力。</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {solutions.map((s) => (
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+            <div class="text-lg font-semibold text-white">{s.title}</div>
+            <div class="mt-2 text-sm leading-relaxed text-slate-300">{s.desc}</div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              {s.bullets.map((b) => (
+                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300"></span><span>{b}</span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-bold text-white">产品</h2>
+      <p class="mt-2 text-slate-300">沉淀为可复用的产品化组件，服务内部交付与持续迭代。</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        {products.map((p) => (
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="text-xl font-bold text-white">{p.name}</div>
+                <div class="mt-1 text-sm text-slate-300">{p.tagline}</div>
+              </div>
+              <span class="rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-200">内部交付</span>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">{p.desc}</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              {p.highlights.map((h) => (
+                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span><span>{h}</span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div class="text-sm font-semibold text-white">说明</div>
+        <p class="mt-2 text-sm text-slate-300">
+          本站点为内部交付官网：展示方案与产品能力、提供文档入口与对接指引。
+          具体客户案例、数据指标与联系方式可在后续版本替换占位内容。
+        </p>
+      </div>
+    </section>
+
+    <!-- Delivery -->
+    <section id="delivery" class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-bold text-white">交付方式</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {delivery.map((d) => (
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div class="text-lg font-semibold text-white">{d.title}</div>
+            <div class="mt-2 text-sm leading-relaxed text-slate-300">{d.desc}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-bold text-white">常见问题</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {faqs.map((f) => (
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div class="text-sm font-semibold text-white">{f.q}</div>
+            <div class="mt-2 text-sm leading-relaxed text-slate-300">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mx-auto max-w-6xl px-4 py-14">
+      <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-600/25 to-cyan-300/10 p-8">
+        <div class="text-2xl font-bold text-white">联系 {contact.name}</div>
+        <p class="mt-2 text-slate-200/80">用于内部交付对接与方案沟通（当前为占位信息）。</p>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="rounded-xl border border-white/10 bg-slate-950/40 p-4">
+            <div class="text-xs text-slate-300">电话</div>
+            <div class="mt-1 text-sm font-semibold text-white">{contact.phone}</div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-slate-950/40 p-4">
+            <div class="text-xs text-slate-300">邮箱</div>
+            <div class="mt-1 text-sm font-semibold text-white">{contact.email}</div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-slate-950/40 p-4">
+            <div class="text-xs text-slate-300">地址</div>
+            <div class="mt-1 text-sm font-semibold text-white">{contact.address}</div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-xs text-slate-200/70">
+          后续可接入：企业微信、表单、地图、ICP备案信息等。
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-8">
+      <div class="mx-auto max-w-6xl px-4 text-xs text-slate-400">
+        © {new Date().getFullYear()} {company.name}（{company.short}） · 内部交付站点
+      </div>
+    </footer>
+  </body>
+</html>

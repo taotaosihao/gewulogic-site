@@ -1,0 +1,28 @@
+services:
+  web:
+    build: .
+    image: gewulogic-site:latest
+    container_name: gewulogic-site
+    restart: unless-stopped
+
+    # Traefik will route traffic; no host port mapping needed.
+    # If you want a fallback direct port, uncomment the following:
+    # ports:
+    #   - "8081:80"
+
+    networks:
+      - traefik-public
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.gewulogic-site.rule=Host(`ww.gewulogic.com`)"
+      - "traefik.http.routers.gewulogic-site.entrypoints=websecure"
+      - "traefik.http.routers.gewulogic-site.tls=true"
+      # If Traefik is configured to obtain certs automatically, this is enough.
+      # If you use a specific certresolver, uncomment and set it:
+      # - "traefik.http.routers.gewulogic-site.tls.certresolver=letsencrypt"
+      - "traefik.http.services.gewulogic-site.loadbalancer.server.port=80"
+
+networks:
+  traefik-public:
+    external: true
