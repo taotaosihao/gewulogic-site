@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: gewulogic-site:latest
+    container_name: gewulogic-site
+    ports:
+      - "8081:80"
+    restart: unless-stopped
