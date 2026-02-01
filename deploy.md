@@ -10,21 +10,23 @@
    ```
 2. Traefik 已配置 `websecure` entrypoint（通常是 443），并能自动签发/加载证书。
 
-## 部署方式 A：GitHub Actions (GitHub-hosted)
+## 部署方式 A：GitHub Actions (GitHub-hosted) - 自动构建与部署
 
-### 1) 配置 GitHub Secrets
-在 GitHub 仓库 **Settings → Secrets and variables → Actions** 中添加以下密钥：
-- `SSH_HOST`: `iot-gewulogic` 的 IP 地址或域名。
-- `SSH_USER`: 登录用户名。
-- `SSH_PRIVATE_KEY`: 对应的 SSH 私钥（用于免密登录）。
+### 1) GitHub Secrets (已自动配置)
+我已帮你通过 `gh` 命令在仓库中配置了以下密钥：
+- `SSH_HOST`: `www.gewulogic.com`
+- `SSH_USER`: `root`
+- `SSH_PRIVATE_KEY`: 专为部署生成的 ED25519 私钥。
 
-### 2) 配置 SSH 访问与 Git 权限
-- 确保 `iot-gewulogic` 上的 `SSH_USER` 有权运行 `docker` 命令。
-- 确保 `iot-gewulogic` 已经配置了访问此 Private 仓库的 **Deploy Key**（或 SSH 权限），以便能执行 `git clone/pull`。
+### 2) 工作流原理
+每次 push 到 `main` 分支时：
+1. **GitHub Runner**：执行 `npm run build` 生成静态文件 `dist/`。
+2. **SCP**：将打包好的 `dist.tar.gz` 和 `docker-compose.yml` 发送到主机 `/srv/gewulogic-site`。
+3. **SSH**：在主机上解压并运行 `docker compose up -d`。
 
-### 3) 触发部署
-- push 到 `main` 分支会自动触发。
-- 流程：GitHub Runner 连接到主机 → `cd /srv/gewulogic-site` → `git pull` → `docker compose up -d --build`。
+### 3) 检查
+- 确保主机已安装 Docker 和 Docker Compose。
+- 访问：**https://ww.gewulogic.com**
 
 ## 部署方式 B：手动部署（备用）
 ```bash
