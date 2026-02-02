@@ -492,7 +492,7 @@ const contact = {
 
     <!-- Advantages -->
     <section id="advantages" class="relative py-20 sm:py-28">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-business-900/50 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/50 to-transparent"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <h2 class="text-3xl font-bold text-white sm:text-4xl">核心优势</h2>
@@ -503,8 +503,8 @@ const contact = {
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {advantages.map((a, index) => (
-            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition-all hover:border-business-500/30 hover:bg-white/10">
-              <div class="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-business-600/20 text-business-400 transition-all group-hover:bg-business-600/30 group-hover:scale-110">
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition-all hover:border-electric-500/30 hover:bg-white/10">
+              <div class="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-electric-600/20 text-electric-400 transition-all group-hover:bg-electric-600/30 group-hover:scale-110">
                 <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={a.icon} />
                 </svg>
@@ -529,11 +529,11 @@ const contact = {
 
         <div class="grid gap-6 lg:grid-cols-3">
           {delivery.map((d) => (
-            <div class="group relative rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-business-500/30 hover:bg-white/10">
-              <div class="absolute -top-4 left-8 flex h-8 w-8 items-center justify-center rounded-lg bg-business-600 text-sm font-bold text-white shadow-lg">
+            <div class="group relative rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-electric-500/30 hover:bg-white/10">
+              <div class="absolute -top-4 left-8 flex h-8 w-8 items-center justify-center rounded-lg bg-electric-600 text-sm font-bold text-white shadow-lg">
                 {d.step}
               </div>
-              <div class="mt-4 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-business-600/20 text-business-400">
+              <div class="mt-4 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-electric-600/20 text-electric-400">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={d.icon} />
                 </svg>
@@ -548,7 +548,7 @@ const contact = {
 
     <!-- FAQ -->
     <section class="relative py-20 sm:py-28">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-business-900/50 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/50 to-transparent"></div>
       <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl font-bold text-white sm:text-4xl">常见问题</h2>
@@ -559,7 +559,7 @@ const contact = {
 
         <div class="space-y-4">
           {faqs.map((f) => (
-            <details class="group rounded-2xl border border-white/10 bg-white/5 transition-all hover:border-white/20 [&[open]]:border-business-500/30 [&[open]]:bg-white/10">
+            <details class="group rounded-2xl border border-white/10 bg-white/5 transition-all hover:border-white/20 [&[open]]:border-electric-500/30 [&[open]]:bg-white/10">
               <summary class="flex cursor-pointer items-center justify-between p-6 text-left">
                 <span class="font-semibold text-white pr-4">{f.q}</span>
                 <svg class="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
