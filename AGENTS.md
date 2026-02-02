@@ -25,8 +25,8 @@ bash pty:true workdir:~/project background:true command:"claude 'Implement the a
 
 ### 2. Gearjob (Business Extension)
 - **Repo**: `/home/sihao/work/gearjob`
-- **Stack**: Frappe / ERPNext.
-- **Role**: MES (primary) and ERP (secondary) business logic, custom Frappe app.
+- **Stack**: 低代码平台 / 企业套件.
+- **Role**: MES (primary) and ERP (secondary) business logic, custom 低代码平台 app.
 
 ### 3. Official Site (Current Project)
 - **Repo**: `/home/sihao/work/gewulogic-site`
