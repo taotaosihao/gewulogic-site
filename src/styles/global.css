@@ -1,1 +1,96 @@
 @import "tailwindcss";
+
+/* Premium Business Blue Theme */
+@theme {
+  /* Primary Blues */
+  --color-business-950: #0a1628;
+  --color-business-900: #0f1d32;
+  --color-business-800: #152642;
+  --color-business-700: #1e3a5f;
+  --color-business-600: #2563eb;
+  --color-business-500: #3b82f6;
+  --color-business-400: #60a5fa;
+  --color-business-300: #93c5fd;
+  --color-business-200: #bfdbfe;
+  --color-business-100: #dbeafe;
+
+  /* Accent Colors */
+  --color-accent-teal: #0d9488;
+  --color-accent-teal-light: #14b8a6;
+  --color-accent-gold: #f59e0b;
+
+  /* Neutral Grays */
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-business-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-business-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-business-600);
+}
+
+/* Animation for gradient backgrounds */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Subtle floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}

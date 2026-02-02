@@ -8,8 +8,8 @@ services:
       - traefik-public
     labels:
       - "traefik.enable=true"
-      # 同时支持 ww 和 www 域名
-      - "traefik.http.routers.gewulogic-site.rule=Host(`ww.gewulogic.com`) || Host(`www.gewulogic.com`)"
+      # 支持 www 域名
+      - "traefik.http.routers.gewulogic-site.rule=Host(`www.gewulogic.com`)"
       # 根据你的 traefik 配置，入口点为 https
       - "traefik.http.routers.gewulogic-site.entrypoints=https"
       - "traefik.http.routers.gewulogic-site.tls=true"

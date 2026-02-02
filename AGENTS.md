@@ -31,7 +31,7 @@ bash pty:true workdir:~/project background:true command:"claude 'Implement the a
 ### 3. Official Site (Current Project)
 - **Repo**: `/home/sihao/work/gewulogic-site`
 - **Stack**: Astro, Tailwind CSS, Docker, Nginx.
-- **Deployment**: `ww.gewulogic.com` (via Traefik on `iot-gewulogic`).
+- **Deployment**: `www.gewulogic.com` (via Traefik on `iot-gewulogic`).
 
 ## 📜 Coding Standards
 - **Language**: Default to Chinese (zh) for comments/docs unless specified.

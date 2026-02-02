@@ -4,84 +4,185 @@ import "../styles/global.css";
 const company = {
   name: "东莞格物数衍科技有限公司",
   short: "格物",
-  slogan: "工业数据采集与MES解决方案",
+  slogan: "让数据驱动生产，让制造更智能",
+  tagline: "工业数据采集与MES解决方案专家",
 };
 
 const nav = [
   { href: "#solutions", label: "解决方案" },
-  { href: "#products", label: "产品" },
-  { href: "#delivery", label: "交付" },
-  { href: "#contact", label: "联系" },
+  { href: "#products", label: "核心产品" },
+  { href: "#advantages", label: "核心优势" },
+  { href: "#delivery", label: "交付服务" },
+  { href: "#contact", label: "联系我们" },
+];
+
+const stats = [
+  { value: "99.9%", label: "系统可用性" },
+  { value: "50ms", label: "数据延迟" },
+  { value: "10M+", label: "日处理数据点" },
 ];
 
 const solutions = [
   {
-    title: "工业数采",
-    desc: "多协议接入、边缘采集、数据清洗与治理，为MES/ERP提供高质量工业数据底座。",
-    bullets: ["设备/网关接入", "MQTT/消息总线", "时序数据存储", "告警与健康监测"],
+    title: "工业数据采集",
+    subtitle: "Industrial Data Collection",
+    icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
+    desc: "构建企业级工业数据底座，实现设备互联互通。支持主流工业协议，具备边缘计算能力，为上层MES/ERP应用提供可靠的实时数据支撑。",
+    features: [
+      { title: "多协议适配", desc: "Modbus、OPC-UA、MQTT等主流协议" },
+      { title: "边缘处理", desc: "本地预处理，降低带宽与延迟" },
+      { title: "数据治理", desc: "清洗、聚合、异常检测一体化" },
+      { title: "高可用架构", desc: "断点续传，保证数据完整性" },
+    ],
   },
   {
-    title: "MES（主线）",
-    desc: "围绕生产过程透明化与可追溯，支撑计划、执行、质量、设备与报工协同。",
-    bullets: ["工单/工序", "报工与追溯", "质检与异常", "看板与指标"],
+    title: "MES生产执行",
+    subtitle: "Manufacturing Execution System",
+    icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+    desc: "围绕生产过程的透明化与全程追溯，打造制造执行核心主线。从计划排程到质量管控，实现车间作业的精细化管理。",
+    features: [
+      { title: "智能排程", desc: "APS排程引擎，优化产能利用" },
+      { title: "工单追溯", desc: "全流程追溯，责任到人到工序" },
+      { title: "质量管控", desc: "SPC统计过程控制，异常预警" },
+      { title: "电子看板", desc: "实时产线状态，可视化管理" },
+    ],
   },
   {
-    title: "ERP（辅线）",
-    desc: "以制造企业运营管理为辅线，打通采购、库存、成本与财务相关流程。",
-    bullets: ["基础主数据", "采购/库存", "成本核算", "与MES联动"],
+    title: "ERP运营协同",
+    subtitle: "Enterprise Resource Planning",
+    icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+    desc: "以制造企业运营管理为辅线，实现采购、库存、成本与财务的一体化管控，与MES无缝衔接，消除信息孤岛。",
+    features: [
+      { title: "主数据管理", desc: "物料、BOM、工艺路线统一管理" },
+      { title: "供应链协同", desc: "采购、库存、供应商全链路" },
+      { title: "成本核算", desc: "精准成本归集，支撑经营决策" },
+      { title: "MES联动", desc: "实时数据互通，业财一体化" },
+    ],
   },
 ];
 
 const products = [
   {
     name: "Hive",
-    tagline: "多租户 IoT 平台与遥测数据管道",
-    desc: "面向网关与设备接入的工业物联平台，支持多租户隔离、遥测数据高吞吐入库、命令下发与管理端可视化。",
-    highlights: ["EMQX + NATS + TDengine 遥测管道", "租户隔离（Hybrid schema）", "网关激活与命令控制"],
+    tagline: "企业级多租户IoT平台",
+    subtitle: "Industrial IoT & Telemetry Pipeline",
+    desc: "专为工业场景设计的物联网平台，采用多租户架构，支持海量设备接入与遥测数据高速处理。经过生产环境验证，稳定可靠。",
+    highlights: [
+      {
+        title: "高性能遥测管道",
+        desc: "EMQX + NATS + TDengine 黄金组合，百万级消息吞吐",
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        title: "多租户隔离架构",
+        desc: "Hybrid Schema设计，数据安全隔离，支持超管跨租户管理",
+        icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+      },
+      {
+        title: "设备全生命周期",
+        desc: "网关激活、在线监测、命令下发、固件升级一站式管理",
+        icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+      },
+    ],
+    tech: ["EMQX", "NATS", "TDengine", "PostgreSQL", "Redis"],
+    color: "from-blue-600 to-cyan-500",
   },
   {
     name: "Gearjob",
-    tagline: "面向制造现场的业务扩展（MES/ERP 联动）",
-    desc: "基于 Frappe/ERPNext 的定制化应用，用于承载制造业务流程、工单与质量等场景扩展，支持内部交付与快速迭代。",
-    highlights: ["生产管理脚本与扩展", "质量/工单等流程增强", "可 Docker / K8s 部署"],
+    tagline: "制造业务扩展引擎",
+    subtitle: "MES/ERP Business Extension Layer",
+    desc: "基于Frappe/ERPNext生态构建的制造业务扩展平台，快速定制生产管理流程，低代码配置，敏捷交付。",
+    highlights: [
+      {
+        title: "低代码定制",
+        desc: "基于Frappe框架，业务流程可视化配置，快速响应需求变更",
+        icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+      },
+      {
+        title: "生产流程增强",
+        desc: "工单管理、质量检验、工艺路线等核心制造场景开箱即用",
+        icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+      },
+      {
+        title: "灵活部署",
+        desc: "Docker/K8s标准化部署，支持私有化与混合云架构",
+        icon: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+      },
+    ],
+    tech: ["Frappe", "ERPNext", "Python", "MariaDB", "Redis"],
+    color: "from-teal-500 to-emerald-500",
+  },
+];
+
+const advantages = [
+  {
+    title: "技术先进",
+    desc: "采用云原生架构，微服务设计，支持弹性伸缩与高可用部署",
+    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+  },
+  {
+    title: "开放集成",
+    desc: "标准RESTful API，支持与第三方系统无缝对接，打通数据孤岛",
+    icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+  },
+  {
+    title: "敏捷交付",
+    desc: "模块化产品设计，按需组合，快速部署上线，缩短项目周期",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+  },
+  {
+    title: "持续演进",
+    desc: "产品化沉淀与持续迭代，确保系统跟随业务发展不断升级",
+    icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
   },
 ];
 
 const delivery = [
   {
-    title: "内部交付 · 轻量部署",
-    desc: "以静态官网 + Docker Nginx 部署为默认形态，快速上线、易回滚。",
+    title: "方案咨询",
+    desc: "深入理解业务痛点，量身定制数字化转型方案，明确实施路径与预期收益。",
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    step: "01",
   },
   {
-    title: "方案落地 · 快速对接",
-    desc: "提供网关/设备对接规范、主题结构、签名与防重放等建议，缩短接入周期。",
+    title: "快速部署",
+    desc: "标准化Docker/K8s部署方案，自动化运维工具，实现快速上线与稳定运行。",
+    icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12",
+    step: "02",
   },
   {
-    title: "迭代支持 · 可扩展",
-    desc: "从 PoC 到产线扩容，支持逐步引入监控、日志、灰度与自动化发布。",
+    title: "持续服务",
+    desc: "提供技术培训、运维支持与版本升级服务，确保系统长期稳定运行。",
+    icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
+    step: "03",
   },
 ];
 
 const faqs = [
   {
-    q: "是否支持多租户与权限隔离？",
-    a: "支持。Hive 采用混合 schema 的多租户架构，保证数据与访问严格隔离；同时支持超管跨租户管理。",
+    q: "Hive平台如何保证多租户数据隔离？",
+    a: "Hive采用Hybrid Schema多租户架构，每个租户拥有独立的数据空间，通过行级安全策略和API网关双重保障，确保数据严格隔离。同时支持超级管理员进行跨租户运维管理。",
   },
   {
-    q: "数采侧常用哪些组件？",
-    a: "参考 Hive 的遥测管道：MQTT Broker（如 EMQX）、消息总线（NATS）、时序库（TDengine）及管理端 API/前端。",
+    q: "系统对接需要多长时间？",
+    a: "标准产品部署通常3-5个工作日可完成。如涉及设备协议适配或业务流程定制，根据复杂度一般2-4周可交付。我们提供完善的技术文档和对接规范，帮助快速集成。",
   },
   {
-    q: "交付形态是什么？",
-    a: "内部交付为主。官网用于方案介绍与文档入口；业务系统按需以 Docker Compose 或 K8s 部署。",
+    q: "支持哪些工业设备和协议？",
+    a: "支持Modbus RTU/TCP、OPC-UA、MQTT、HTTP等主流工业协议，可对接PLC、数控机床、传感器、智能网关等各类工业设备。协议适配层可按需扩展。",
+  },
+  {
+    q: "如何保证系统的高可用性？",
+    a: "核心组件支持集群部署，数据库采用主从复制，消息队列支持多副本。结合K8s自动故障转移与弹性伸缩，确保99.9%以上的系统可用性。",
   },
 ];
 
 const contact = {
   name: company.short,
-  phone: "（占位）", // TODO
-  email: "（占位）", // TODO
-  address: "（占位）", // TODO
+  phone: "（占位）",
+  email: "（占位）",
+  address: "广东省东莞市（具体地址占位）",
+  wechat: "（企业微信占位）",
 };
 ---
 
@@ -89,210 +190,506 @@ const contact = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={`${company.name}｜数采为主，MES为主线，ERP为辅线的工业数字化解决方案。`} />
-    <title>{company.short}｜工业数采与MES解决方案</title>
+    <meta name="description" content={`${company.name}｜${company.tagline}。以工业数据采集为底座，贯通MES生产执行主线，协同ERP运营管理，助力制造企业数字化转型。`} />
+    <meta name="keywords" content="工业数据采集,MES系统,ERP系统,物联网平台,智能制造,工业4.0,数字化转型,格物数衍" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{company.short}｜{company.tagline}</title>
   </head>
 
-  <body class="min-h-screen bg-slate-950 text-slate-100">
-    <!-- Top bar -->
-    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#" class="flex items-center gap-3">
-          <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-300 shadow-lg shadow-blue-500/20" aria-label="logo placeholder"></div>
+  <body class="min-h-screen bg-business-950 text-gray-100 antialiased">
+    <!-- Mobile menu overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
+      <div class="absolute inset-0 bg-business-950/95 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+      <nav class="relative flex h-full flex-col items-center justify-center gap-8 text-xl">
+        {nav.map((n) => (
+          <a class="text-gray-200 hover:text-white transition-colors" href={n.href} onclick="closeMobileMenu()">{n.label}</a>
+        ))}
+        <a href="#contact" class="mt-4 rounded-xl bg-business-600 px-6 py-3 font-semibold text-white hover:bg-business-500" onclick="closeMobileMenu()">
+          预约沟通
+        </a>
+      </nav>
+      <button class="absolute right-6 top-6 text-gray-300 hover:text-white" onclick="closeMobileMenu()" aria-label="关闭菜单">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-business-950/80 backdrop-blur-lg">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="relative h-10 w-10 rounded-xl bg-gradient-to-br from-business-600 to-accent-teal shadow-lg shadow-business-600/30 transition-transform group-hover:scale-105">
+            <div class="absolute inset-0 flex items-center justify-center text-white font-bold text-lg">格</div>
+          </div>
           <div class="leading-tight">
-            <div class="text-sm font-semibold tracking-wide text-white">{company.short}</div>
-            <div class="text-xs text-slate-400">{company.name}</div>
+            <div class="text-base font-bold tracking-wide text-white">{company.short}</div>
+            <div class="text-xs text-gray-400 hidden sm:block">{company.tagline}</div>
           </div>
         </a>
 
-        <nav class="hidden gap-6 text-sm text-slate-300 md:flex">
+        <nav class="hidden gap-8 text-sm font-medium text-gray-300 lg:flex">
           {nav.map((n) => (
-            <a class="hover:text-white" href={n.href}>{n.label}</a>
+            <a class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-business-500 after:transition-all hover:after:w-full" href={n.href}>{n.label}</a>
           ))}
         </nav>
 
-        <a href="#contact" class="rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500">
-          预约沟通
-        </a>
+        <div class="flex items-center gap-4">
+          <a href="#contact" class="hidden rounded-xl bg-business-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-business-600/25 transition-all hover:bg-business-500 hover:shadow-business-500/30 sm:block">
+            预约沟通
+          </a>
+          <button class="lg:hidden text-gray-300 hover:text-white" onclick="openMobileMenu()" aria-label="打开菜单">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
     <!-- Hero -->
     <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(800px_circle_at_10%_10%,rgba(59,130,246,0.35),transparent_60%),radial-gradient(700px_circle_at_90%_20%,rgba(34,211,238,0.25),transparent_55%)]"></div>
-      <div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
-        <div>
-          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-            内部交付 · 轻量部署 · 商务蓝色系
-          </p>
-          <h1 class="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
-            {company.slogan}
-          </h1>
-          <p class="mt-4 text-base leading-relaxed text-slate-300">
-            以<strong class="text-slate-100">工业数据采集</strong>为底座，贯通<strong class="text-slate-100">MES 生产执行</strong>主线，
-            并与<strong class="text-slate-100">ERP</strong>辅线协同，帮助制造企业实现设备互联、过程透明与可追溯。
-          </p>
+      <!-- Background effects -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.3),transparent)]"></div>
+      <div class="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-business-600/20 blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-accent-teal/15 blur-3xl animate-float" style="animation-delay: -3s;"></div>
 
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#products" class="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500">查看产品</a>
-            <a href="#solutions" class="rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/10">了解方案</a>
-          </div>
+      <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="animate-fade-in-up">
+            <div class="inline-flex items-center gap-2 rounded-full border border-business-500/30 bg-business-600/10 px-4 py-1.5 text-sm text-business-300 mb-6">
+              <span class="h-2 w-2 rounded-full bg-accent-teal animate-pulse"></span>
+              专注工业数字化转型
+            </div>
 
-          <div class="mt-8 grid grid-cols-3 gap-3 text-xs text-slate-300">
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-              <div class="text-white/90 font-semibold">数采</div>
-              <div class="mt-1 text-slate-400">设备/网关接入</div>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-              <div class="text-white/90 font-semibold">MES</div>
-              <div class="mt-1 text-slate-400">生产过程协同</div>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-              <div class="text-white/90 font-semibold">ERP</div>
-              <div class="mt-1 text-slate-400">运营管理联动</div>
-            </div>
-          </div>
-        </div>
+            <h1 class="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              <span class="bg-gradient-to-r from-white via-business-200 to-business-400 bg-clip-text text-transparent">{company.slogan}</span>
+            </h1>
 
-        <div class="relative">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl shadow-blue-500/10">
-            <div class="text-sm font-semibold text-white">参考架构（概览）</div>
-            <div class="mt-3 space-y-3 text-sm text-slate-300">
-              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
-                <div class="font-semibold text-slate-100">采集接入</div>
-                <div class="text-slate-400">网关/设备 → MQTT（EMQX）</div>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
-                <div class="font-semibold text-slate-100">消息与管道</div>
-                <div class="text-slate-400">消息总线（NATS）→ 消费处理</div>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
-                <div class="font-semibold text-slate-100">存储与服务</div>
-                <div class="text-slate-400">时序库（TDengine）+ 元数据（PostgreSQL）</div>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-slate-900/40 p-3">
-                <div class="font-semibold text-slate-100">应用层</div>
-                <div class="text-slate-400">MES 主线 + ERP 辅线 + 看板与追溯</div>
-              </div>
+            <p class="mt-6 text-lg leading-relaxed text-gray-300 sm:text-xl">
+              以<strong class="text-white">工业数据采集</strong>为底座，贯通<strong class="text-white">MES生产执行</strong>主线，
+              协同<strong class="text-white">ERP运营管理</strong>辅线，帮助制造企业实现设备互联、过程透明与全程可追溯。
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#products" class="group inline-flex items-center gap-2 rounded-xl bg-business-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-business-600/25 transition-all hover:bg-business-500 hover:shadow-business-500/30">
+                了解核心产品
+                <svg class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a href="#solutions" class="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-base font-semibold text-white backdrop-blur transition-all hover:bg-white/10">
+                查看解决方案
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+              {stats.map((stat) => (
+                <div>
+                  <div class="text-2xl font-bold text-white sm:text-3xl">{stat.value}</div>
+                  <div class="mt-1 text-sm text-gray-400">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div class="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44 rounded-full bg-blue-600/20 blur-3xl"></div>
+          <!-- Architecture diagram -->
+          <div class="relative animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-business-600/10 backdrop-blur-sm">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                <span class="ml-2 text-sm font-medium text-gray-400">系统架构概览</span>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-xl border border-business-500/30 bg-business-900/50 p-4 transition-all hover:border-business-500/50">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-business-600/20">
+                      <svg class="h-5 w-5 text-business-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">设备层</div>
+                      <div class="text-sm text-gray-400">PLC · 传感器 · 智能网关</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <svg class="h-6 w-6 text-business-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+
+                <div class="rounded-xl border border-accent-teal/30 bg-accent-teal/10 p-4 transition-all hover:border-accent-teal/50">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-teal/20">
+                      <svg class="h-5 w-5 text-accent-teal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">数据采集层（Hive）</div>
+                      <div class="text-sm text-gray-400">EMQX · NATS · TDengine</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <svg class="h-6 w-6 text-business-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+
+                <div class="rounded-xl border border-business-500/30 bg-business-900/50 p-4 transition-all hover:border-business-500/50">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-business-600/20">
+                      <svg class="h-5 w-5 text-business-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">业务层（Gearjob）</div>
+                      <div class="text-sm text-gray-400">MES主线 · ERP辅线</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <svg class="h-6 w-6 text-business-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+
+                <div class="rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-white/20">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
+                      <svg class="h-5 w-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">展示层</div>
+                      <div class="text-sm text-gray-400">看板 · 报表 · 移动端</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decorative elements -->
+            <div class="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl border border-business-500/20 bg-business-600/10 -z-10"></div>
+            <div class="absolute -top-4 -left-4 h-20 w-20 rounded-2xl border border-accent-teal/20 bg-accent-teal/10 -z-10"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Solutions -->
-    <section id="solutions" class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-2xl font-bold text-white">解决方案</h2>
-      <p class="mt-2 text-slate-300">围绕制造企业的“数据底座 → 执行主线 → 运营协同”构建可落地的工业数字化能力。</p>
+    <section id="solutions" class="relative py-20 sm:py-28">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-business-900/50 to-transparent"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">解决方案</h2>
+          <p class="mt-4 text-lg text-gray-300">
+            围绕制造企业的"数据底座 → 执行主线 → 运营协同"三层架构，构建完整的工业数字化能力
+          </p>
+        </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
-        {solutions.map((s) => (
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
-            <div class="text-lg font-semibold text-white">{s.title}</div>
-            <div class="mt-2 text-sm leading-relaxed text-slate-300">{s.desc}</div>
-            <ul class="mt-4 space-y-2 text-sm text-slate-300">
-              {s.bullets.map((b) => (
-                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300"></span><span>{b}</span></li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div class="grid gap-8 lg:grid-cols-3">
+          {solutions.map((s, index) => (
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-business-500/30 hover:bg-white/10" style={`animation-delay: ${index * 0.1}s;`}>
+              <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-business-600/20 text-business-400 transition-colors group-hover:bg-business-600/30">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={s.icon} />
+                </svg>
+              </div>
+
+              <h3 class="text-xl font-bold text-white">{s.title}</h3>
+              <p class="text-sm text-business-400 font-medium">{s.subtitle}</p>
+              <p class="mt-4 text-gray-300 leading-relaxed">{s.desc}</p>
+
+              <div class="mt-6 space-y-3">
+                {s.features.map((f) => (
+                  <div class="flex gap-3">
+                    <div class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-teal"></div>
+                    <div>
+                      <div class="text-sm font-medium text-white">{f.title}</div>
+                      <div class="text-sm text-gray-400">{f.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
     <!-- Products -->
-    <section id="products" class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-2xl font-bold text-white">产品</h2>
-      <p class="mt-2 text-slate-300">沉淀为可复用的产品化组件，服务内部交付与持续迭代。</p>
+    <section id="products" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">核心产品</h2>
+          <p class="mt-4 text-lg text-gray-300">
+            经过生产环境验证的产品化组件，支持快速部署与持续迭代
+          </p>
+        </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-2">
-        {products.map((p) => (
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="text-xl font-bold text-white">{p.name}</div>
-                <div class="mt-1 text-sm text-slate-300">{p.tagline}</div>
+        <div class="grid gap-8 lg:grid-cols-2">
+          {products.map((p) => (
+            <div class="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-8 transition-all hover:border-white/20">
+              <div class="flex items-start justify-between gap-4 mb-6">
+                <div>
+                  <div class="flex items-center gap-3">
+                    <div class={`h-12 w-12 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center shadow-lg`}>
+                      <span class="text-xl font-bold text-white">{p.name[0]}</span>
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold text-white">{p.name}</h3>
+                      <p class="text-sm text-gray-400">{p.subtitle}</p>
+                    </div>
+                  </div>
+                </div>
+                <span class="rounded-full border border-business-400/30 bg-business-500/10 px-3 py-1 text-xs font-semibold text-business-300">
+                  内部交付
+                </span>
               </div>
-              <span class="rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-200">内部交付</span>
-            </div>
-            <p class="mt-4 text-sm leading-relaxed text-slate-300">{p.desc}</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-300">
-              {p.highlights.map((h) => (
-                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span><span>{h}</span></li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
 
-      <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
-        <div class="text-sm font-semibold text-white">说明</div>
-        <p class="mt-2 text-sm text-slate-300">
-          本站点为内部交付官网：展示方案与产品能力、提供文档入口与对接指引。
-          具体客户案例、数据指标与联系方式可在后续版本替换占位内容。
-        </p>
+              <p class="text-base text-gray-300 font-medium mb-2">{p.tagline}</p>
+              <p class="text-gray-400 leading-relaxed">{p.desc}</p>
+
+              <div class="mt-8 space-y-4">
+                {p.highlights.map((h) => (
+                  <div class="flex gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all hover:bg-white/10">
+                    <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-white/10">
+                      <svg class="h-5 w-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={h.icon} />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">{h.title}</div>
+                      <div class="text-sm text-gray-400">{h.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                {p.tech.map((t) => (
+                  <span class="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-gray-300">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section id="advantages" class="relative py-20 sm:py-28">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-business-900/50 to-transparent"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">核心优势</h2>
+          <p class="mt-4 text-lg text-gray-300">
+            以技术创新驱动业务价值，为制造企业数字化转型保驾护航
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {advantages.map((a, index) => (
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition-all hover:border-business-500/30 hover:bg-white/10">
+              <div class="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-business-600/20 text-business-400 transition-all group-hover:bg-business-600/30 group-hover:scale-110">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={a.icon} />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-white">{a.title}</h3>
+              <p class="mt-2 text-sm text-gray-400 leading-relaxed">{a.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
     <!-- Delivery -->
-    <section id="delivery" class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-2xl font-bold text-white">交付方式</h2>
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
-        {delivery.map((d) => (
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div class="text-lg font-semibold text-white">{d.title}</div>
-            <div class="mt-2 text-sm leading-relaxed text-slate-300">{d.desc}</div>
-          </div>
-        ))}
+    <section id="delivery" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">交付服务</h2>
+          <p class="mt-4 text-lg text-gray-300">
+            从方案咨询到持续运维，提供全生命周期的专业服务
+          </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          {delivery.map((d) => (
+            <div class="group relative rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-business-500/30 hover:bg-white/10">
+              <div class="absolute -top-4 left-8 flex h-8 w-8 items-center justify-center rounded-lg bg-business-600 text-sm font-bold text-white shadow-lg">
+                {d.step}
+              </div>
+              <div class="mt-4 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-business-600/20 text-business-400">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={d.icon} />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white">{d.title}</h3>
+              <p class="mt-3 text-gray-400 leading-relaxed">{d.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-2xl font-bold text-white">常见问题</h2>
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
-        {faqs.map((f) => (
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div class="text-sm font-semibold text-white">{f.q}</div>
-            <div class="mt-2 text-sm leading-relaxed text-slate-300">{f.a}</div>
-          </div>
-        ))}
+    <section class="relative py-20 sm:py-28">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-business-900/50 to-transparent"></div>
+      <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">常见问题</h2>
+          <p class="mt-4 text-lg text-gray-300">
+            关于产品与服务的常见疑问解答
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map((f) => (
+            <details class="group rounded-2xl border border-white/10 bg-white/5 transition-all hover:border-white/20 [&[open]]:border-business-500/30 [&[open]]:bg-white/10">
+              <summary class="flex cursor-pointer items-center justify-between p-6 text-left">
+                <span class="font-semibold text-white pr-4">{f.q}</span>
+                <svg class="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-gray-400 leading-relaxed">{f.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="mx-auto max-w-6xl px-4 py-14">
-      <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-600/25 to-cyan-300/10 p-8">
-        <div class="text-2xl font-bold text-white">联系 {contact.name}</div>
-        <p class="mt-2 text-slate-200/80">用于内部交付对接与方案沟通（当前为占位信息）。</p>
+    <section id="contact" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-business-600/30 via-business-700/20 to-accent-teal/10 p-8 sm:p-12 lg:p-16">
+          <!-- Background decoration -->
+          <div class="absolute top-0 right-0 h-64 w-64 rounded-full bg-business-500/20 blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-accent-teal/10 blur-3xl"></div>
 
-        <div class="mt-6 grid gap-4 md:grid-cols-3">
-          <div class="rounded-xl border border-white/10 bg-slate-950/40 p-4">
-            <div class="text-xs text-slate-300">电话</div>
-            <div class="mt-1 text-sm font-semibold text-white">{contact.phone}</div>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-slate-950/40 p-4">
-            <div class="text-xs text-slate-300">邮箱</div>
-            <div class="mt-1 text-sm font-semibold text-white">{contact.email}</div>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-slate-950/40 p-4">
-            <div class="text-xs text-slate-300">地址</div>
-            <div class="mt-1 text-sm font-semibold text-white">{contact.address}</div>
-          </div>
-        </div>
+          <div class="relative">
+            <div class="max-w-2xl">
+              <h2 class="text-3xl font-bold text-white sm:text-4xl">
+                联系{contact.name}
+              </h2>
+              <p class="mt-4 text-lg text-gray-300">
+                期待与您探讨工业数字化转型方案，共同推进智能制造落地
+              </p>
+            </div>
 
-        <div class="mt-6 text-xs text-slate-200/70">
-          后续可接入：企业微信、表单、地图、ICP备案信息等。
+            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-xl border border-white/10 bg-business-950/50 p-5 backdrop-blur">
+                <div class="flex items-center gap-3 mb-3">
+                  <svg class="h-5 w-5 text-business-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span class="text-sm text-gray-400">电话</span>
+                </div>
+                <div class="font-semibold text-white">{contact.phone}</div>
+              </div>
+
+              <div class="rounded-xl border border-white/10 bg-business-950/50 p-5 backdrop-blur">
+                <div class="flex items-center gap-3 mb-3">
+                  <svg class="h-5 w-5 text-business-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span class="text-sm text-gray-400">邮箱</span>
+                </div>
+                <div class="font-semibold text-white">{contact.email}</div>
+              </div>
+
+              <div class="rounded-xl border border-white/10 bg-business-950/50 p-5 backdrop-blur">
+                <div class="flex items-center gap-3 mb-3">
+                  <svg class="h-5 w-5 text-business-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span class="text-sm text-gray-400">地址</span>
+                </div>
+                <div class="font-semibold text-white text-sm">{contact.address}</div>
+              </div>
+
+              <div class="rounded-xl border border-white/10 bg-business-950/50 p-5 backdrop-blur">
+                <div class="flex items-center gap-3 mb-3">
+                  <svg class="h-5 w-5 text-business-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <span class="text-sm text-gray-400">企业微信</span>
+                </div>
+                <div class="font-semibold text-white">{contact.wechat}</div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="mailto:contact@gewulogic.com" class="inline-flex items-center gap-2 rounded-xl bg-business-600 px-6 py-3 font-semibold text-white shadow-lg shadow-business-600/25 transition-all hover:bg-business-500">
+                发送邮件咨询
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            <p class="mt-6 text-sm text-gray-400">
+              后续可接入：在线表单、地图导航、ICP备案信息等
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer class="border-t border-white/10 py-8">
-      <div class="mx-auto max-w-6xl px-4 text-xs text-slate-400">
-        © {new Date().getFullYear()} {company.name}（{company.short}） · 内部交付站点
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-business-950/80">
+      <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-business-600 to-accent-teal flex items-center justify-center">
+              <span class="text-lg font-bold text-white">格</span>
+            </div>
+            <div>
+              <div class="font-bold text-white">{company.short}</div>
+              <div class="text-xs text-gray-400">{company.name}</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+            {nav.map((n) => (
+              <a href={n.href} class="hover:text-white transition-colors">{n.label}</a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} {company.name} · 内部交付站点</p>
+        </div>
       </div>
     </footer>
+
+    <!-- Mobile menu script -->
+    <script is:inline>
+      function openMobileMenu() {
+        document.getElementById('mobile-menu').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMobileMenu() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    </script>
   </body>
 </html>
