@@ -1,0 +1,31 @@
+---
+import { delivery } from "../data/site";
+---
+
+<section id="delivery" class="py-24 bg-gray-50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">交付服务</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        从方案咨询到持续运维，提供全生命周期的专业服务
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+      {delivery.map((d) => (
+        <div class="relative rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 transition-all hover:shadow-md">
+          <div class="absolute -top-4 left-8 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-sm font-bold text-white shadow-lg">
+            {d.step}
+          </div>
+          <div class="mt-4 mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={d.icon} />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">{d.title}</h3>
+          <p class="mt-3 text-gray-600 leading-relaxed">{d.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

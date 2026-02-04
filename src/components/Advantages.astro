@@ -1,0 +1,28 @@
+---
+import { advantages } from "../data/site";
+---
+
+<section id="advantages" class="py-24 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">核心优势</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        以技术创新驱动业务价值，为制造企业数字化转型保驾护航
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {advantages.map((a) => (
+        <div class="group relative rounded-2xl bg-gray-50 p-8 text-center transition-all hover:bg-white hover:shadow-lg hover:-translate-y-1 ring-1 ring-inset ring-gray-200/50 hover:ring-gray-200">
+          <div class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-blue-600 shadow-sm ring-1 ring-gray-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={a.icon} />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">{a.title}</h3>
+          <p class="mt-4 text-sm text-gray-600 leading-relaxed">{a.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

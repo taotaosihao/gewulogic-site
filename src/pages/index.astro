@@ -1,189 +1,7 @@
 ---
 import "../styles/global.css";
+import { company, nav, megaMenuData, solutions, products, advantages, delivery, faqs, contact, stats } from "../data/site";
 
-const company = {
-  name: "东莞格物数衍科技有限公司",
-  short: "格物",
-  slogan: "让数据驱动生产，让制造更智能",
-  tagline: "工业数据采集与MES解决方案专家",
-};
-
-const nav = [
-  { href: "#solutions", label: "解决方案" },
-  { href: "#products", label: "核心产品" },
-  { href: "#advantages", label: "核心优势" },
-  { href: "#delivery", label: "交付服务" },
-  { href: "#contact", label: "联系我们" },
-];
-
-const stats = [
-  { value: "99.9%", label: "系统可用性" },
-  { value: "50ms", label: "数据延迟" },
-  { value: "10M+", label: "日处理数据点" },
-];
-
-const solutions = [
-  {
-    title: "工业数据采集",
-    subtitle: "Industrial Data Collection",
-    icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
-    desc: "构建企业级工业数据底座，实现设备互联互通。支持主流工业协议，具备边缘计算能力，为上层MES/ERP应用提供可靠的实时数据支撑。",
-    features: [
-      { title: "多协议适配", desc: "Modbus、OPC-UA、MQTT等主流协议" },
-      { title: "边缘处理", desc: "本地预处理，降低带宽与延迟" },
-      { title: "数据治理", desc: "清洗、聚合、异常检测一体化" },
-      { title: "高可用架构", desc: "断点续传，保证数据完整性" },
-    ],
-  },
-  {
-    title: "MES生产执行",
-    subtitle: "Manufacturing Execution System",
-    icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
-    desc: "围绕生产过程的透明化与全程追溯，打造制造执行核心主线。从计划排程到质量管控，实现车间作业的精细化管理。",
-    features: [
-      { title: "智能排程", desc: "APS排程引擎，优化产能利用" },
-      { title: "工单追溯", desc: "全流程追溯，责任到人到工序" },
-      { title: "质量管控", desc: "SPC统计过程控制，异常预警" },
-      { title: "电子看板", desc: "实时产线状态，可视化管理" },
-    ],
-  },
-  {
-    title: "ERP运营协同",
-    subtitle: "Enterprise Resource Planning",
-    icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
-    desc: "以制造企业运营管理为辅线，实现采购、库存、成本与财务的一体化管控，与MES无缝衔接，消除信息孤岛。",
-    features: [
-      { title: "主数据管理", desc: "物料、BOM、工艺路线统一管理" },
-      { title: "供应链协同", desc: "采购、库存、供应商全链路" },
-      { title: "成本核算", desc: "精准成本归集，支撑经营决策" },
-      { title: "MES联动", desc: "实时数据互通，业财一体化" },
-    ],
-  },
-];
-
-const products = [
-  {
-    name: "Hive",
-    tagline: "企业级多租户IoT平台",
-    subtitle: "Industrial IoT & Telemetry Pipeline",
-    desc: "专为工业场景设计的物联网平台，采用多租户架构，支持海量设备接入与遥测数据高速处理。经过生产环境验证，稳定可靠。",
-    highlights: [
-      {
-        title: "高性能遥测管道",
-        desc: "EMQX + NATS + TDengine 黄金组合，百万级消息吞吐",
-        icon: "M13 10V3L4 14h7v7l9-11h-7z"
-      },
-      {
-        title: "多租户隔离架构",
-        desc: "Hybrid Schema设计，数据安全隔离，支持超管跨租户管理",
-        icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-      },
-      {
-        title: "设备全生命周期",
-        desc: "网关激活、在线监测、命令下发、固件升级一站式管理",
-        icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-      },
-    ],
-    tech: ["EMQX", "NATS", "TDengine", "PostgreSQL", "Redis"],
-    color: "from-blue-600 to-cyan-500",
-  },
-  {
-    name: "Gearjob",
-    tagline: "制造业务扩展引擎",
-    subtitle: "MES/ERP Business Extension Layer",
-    desc: "基于企业应用生态构建的制造业务扩展平台，快速定制生产管理流程，低代码配置，敏捷交付。",
-    highlights: [
-      {
-        title: "低代码定制",
-        desc: "基于企业应用框架，业务流程可视化配置，快速响应需求变更",
-        icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-      },
-      {
-        title: "生产流程增强",
-        desc: "工单管理、质量检验、工艺路线等核心制造场景开箱即用",
-        icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-      },
-      {
-        title: "灵活部署",
-        desc: "Docker/K8s标准化部署，支持私有化与混合云架构",
-        icon: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-      },
-    ],
-    tech: ["低代码平台", "企业套件", "Python", "MariaDB", "Redis"],
-    color: "from-teal-500 to-emerald-500",
-  },
-];
-
-const advantages = [
-  {
-    title: "技术先进",
-    desc: "采用云原生架构，微服务设计，支持弹性伸缩与高可用部署",
-    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-  },
-  {
-    title: "开放集成",
-    desc: "标准RESTful API，支持与第三方系统无缝对接，打通数据孤岛",
-    icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
-  },
-  {
-    title: "敏捷交付",
-    desc: "模块化产品设计，按需组合，快速部署上线，缩短项目周期",
-    icon: "M13 10V3L4 14h7v7l9-11h-7z",
-  },
-  {
-    title: "持续演进",
-    desc: "产品化沉淀与持续迭代，确保系统跟随业务发展不断升级",
-    icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
-  },
-];
-
-const delivery = [
-  {
-    title: "方案咨询",
-    desc: "深入理解业务痛点，量身定制数字化转型方案，明确实施路径与预期收益。",
-    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
-    step: "01",
-  },
-  {
-    title: "快速部署",
-    desc: "标准化Docker/K8s部署方案，自动化运维工具，实现快速上线与稳定运行。",
-    icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12",
-    step: "02",
-  },
-  {
-    title: "持续服务",
-    desc: "提供技术培训、运维支持与版本升级服务，确保系统长期稳定运行。",
-    icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
-    step: "03",
-  },
-];
-
-const faqs = [
-  {
-    q: "Hive平台如何保证多租户数据隔离？",
-    a: "Hive采用Hybrid Schema多租户架构，每个租户拥有独立的数据空间，通过行级安全策略和API网关双重保障，确保数据严格隔离。同时支持超级管理员进行跨租户运维管理。",
-  },
-  {
-    q: "系统对接需要多长时间？",
-    a: "标准产品部署通常3-5个工作日可完成。如涉及设备协议适配或业务流程定制，根据复杂度一般2-4周可交付。我们提供完善的技术文档和对接规范，帮助快速集成。",
-  },
-  {
-    q: "支持哪些工业设备和协议？",
-    a: "支持Modbus RTU/TCP、OPC-UA、MQTT、HTTP等主流工业协议，可对接PLC、数控机床、传感器、智能网关等各类工业设备。协议适配层可按需扩展。",
-  },
-  {
-    q: "如何保证系统的高可用性？",
-    a: "核心组件支持集群部署，数据库采用主从复制，消息队列支持多副本。结合K8s自动故障转移与弹性伸缩，确保99.9%以上的系统可用性。",
-  },
-];
-
-const contact = {
-  name: company.short,
-  phone: "（占位）",
-  email: "（占位）",
-  address: "广东省东莞市（具体地址占位）",
-  wechat: "（企业微信占位）",
-};
 ---
 
 <html lang="zh-CN">
@@ -198,46 +16,231 @@ const contact = {
   </head>
 
   <body class="min-h-screen bg-navy-950 text-gray-100 antialiased">
+    <!-- Global Abstract Background Layer -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <!-- Base gradient -->
+      <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950"></div>
+      <!-- Top-left glow -->
+      <div class="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-electric-600/8 blur-[120px]"></div>
+      <!-- Bottom-right glow -->
+      <div class="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-cyan-500/6 blur-[100px]"></div>
+      <!-- Center accent -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-electric-500/4 blur-[150px]"></div>
+      <!-- Subtle noise texture overlay -->
+      <div class="absolute inset-0 opacity-[0.015]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 grid-pattern opacity-30"></div>
+    </div>
+
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
-      <div class="absolute inset-0 bg-navy-950/95 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
-      <nav class="relative flex h-full flex-col items-center justify-center gap-8 text-xl">
-        {nav.map((n) => (
-          <a class="text-gray-200 hover:text-white transition-colors" href={n.href} onclick="closeMobileMenu()">{n.label}</a>
-        ))}
-        <a href="#contact" class="mt-4 rounded-xl bg-electric-500 px-6 py-3 font-semibold text-white hover:bg-electric-400" onclick="closeMobileMenu()">
+      <div class="absolute inset-0 bg-navy-950/98 backdrop-blur-md" onclick="closeMobileMenu()"></div>
+      <nav class="relative flex h-full flex-col px-6 pt-20 pb-8 overflow-y-auto">
+        <!-- Close button -->
+        <button class="absolute right-5 top-5 p-2 text-gray-400 hover:text-white" onclick="closeMobileMenu()" aria-label="关闭菜单">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Mobile nav items with collapsible sub-menus -->
+        <div class="space-y-2">
+          <!-- Products -->
+          <div class="mobile-nav-group">
+            <button class="mobile-nav-trigger flex w-full items-center justify-between py-3 text-lg font-semibold text-white" data-target="mobile-products">
+              产品
+              <svg class="h-5 w-5 transition-transform text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-products" class="mobile-nav-content hidden pl-4 pb-3 space-y-3">
+              {megaMenuData.products.items.map((item) => (
+                <a href={item.href} class="block py-2 text-gray-300 hover:text-white" onclick="closeMobileMenu()">
+                  <div class="font-medium">{item.name}</div>
+                  <div class="text-sm text-gray-500">{item.desc}</div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Solutions -->
+          <div class="mobile-nav-group">
+            <button class="mobile-nav-trigger flex w-full items-center justify-between py-3 text-lg font-semibold text-white" data-target="mobile-solutions">
+              解决方案
+              <svg class="h-5 w-5 transition-transform text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-solutions" class="mobile-nav-content hidden pl-4 pb-3 space-y-3">
+              {megaMenuData.solutions.items.map((item) => (
+                <a href={item.href} class="block py-2 text-gray-300 hover:text-white" onclick="closeMobileMenu()">
+                  <div class="font-medium">{item.name}</div>
+                  <div class="text-sm text-gray-500">{item.desc}</div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Delivery -->
+          <div class="mobile-nav-group">
+            <button class="mobile-nav-trigger flex w-full items-center justify-between py-3 text-lg font-semibold text-white" data-target="mobile-delivery">
+              交付
+              <svg class="h-5 w-5 transition-transform text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-delivery" class="mobile-nav-content hidden pl-4 pb-3 space-y-3">
+              {megaMenuData.delivery.items.map((item) => (
+                <a href="#delivery" class="block py-2 text-gray-300 hover:text-white" onclick="closeMobileMenu()">
+                  <div class="font-medium">{item.name}</div>
+                  <div class="text-sm text-gray-500">{item.desc}</div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Simple links -->
+          <a href="#advantages" class="block py-3 text-lg font-semibold text-white hover:text-electric-400" onclick="closeMobileMenu()">优势</a>
+          <a href="#about" class="block py-3 text-lg font-semibold text-white hover:text-electric-400" onclick="closeMobileMenu()">关于</a>
+          <a href="#contact" class="block py-3 text-lg font-semibold text-white hover:text-electric-400" onclick="closeMobileMenu()">联系我们</a>
+        </div>
+
+        <a href="#contact" class="mt-8 block rounded-xl bg-electric-500 px-6 py-3.5 text-center font-semibold text-white hover:bg-electric-400" onclick="closeMobileMenu()">
           预约沟通
         </a>
       </nav>
-      <button class="absolute right-6 top-6 text-gray-300 hover:text-white" onclick="closeMobileMenu()" aria-label="关闭菜单">
-        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
     </div>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-40 border-b border-white/10 bg-navy-950/80 backdrop-blur-lg">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <!-- Header with Mega Menu -->
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-40 border-b border-white/5 bg-navy-950/70 backdrop-blur-xl transition-all duration-300">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <!-- Logo -->
         <a href="#" class="flex items-center gap-3 group">
-          <img src="/logo.png" alt="格物 Logo" class="h-10 rounded-xl shadow-lg shadow-electric-500/30 transition-transform group-hover:scale-105" />
+          <img src="/logo.png" alt="格物 Logo" class="h-10 rounded-xl shadow-lg shadow-electric-500/20 transition-transform group-hover:scale-105" />
           <div class="leading-tight">
             <div class="text-base font-bold tracking-wide text-white">{company.short}</div>
             <div class="text-xs text-gray-400 hidden sm:block">{company.tagline}</div>
           </div>
         </a>
 
-        <nav class="hidden gap-8 text-sm font-medium text-gray-300 lg:flex">
-          {nav.map((n) => (
-            <a class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-electric-400 after:transition-all hover:after:w-full" href={n.href}>{n.label}</a>
-          ))}
+        <!-- Desktop Mega Menu Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <!-- Products dropdown -->
+          <div class="mega-menu-item relative group">
+            <a href="#products" class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all" data-section="products">
+              产品
+              <svg class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <!-- Mega dropdown panel -->
+            <div class="mega-panel absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="w-[540px] rounded-2xl border border-white/10 bg-navy-900/95 backdrop-blur-xl shadow-2xl shadow-black/50 p-6">
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">{megaMenuData.products.title}</h4>
+                    <div class="space-y-3">
+                      {megaMenuData.products.items.map((item) => (
+                        <a href={item.href} class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-electric-500/10 text-electric-400">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={item.icon} />
+                            </svg>
+                          </div>
+                          <div>
+                            <div class="font-semibold text-white">{item.name}</div>
+                            <div class="text-sm text-gray-400">{item.desc}</div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="border-l border-white/10 pl-6">
+                    <div class="rounded-xl bg-gradient-to-br from-electric-600/20 to-cyan-500/10 p-5">
+                      <h5 class="font-semibold text-white mb-2">{megaMenuData.products.featured.title}</h5>
+                      <p class="text-sm text-gray-400 mb-4">{megaMenuData.products.featured.desc}</p>
+                      <a href={megaMenuData.products.featured.href} class="inline-flex items-center gap-1 text-sm font-medium text-electric-400 hover:text-electric-300">
+                        了解更多
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions dropdown -->
+          <div class="mega-menu-item relative group">
+            <a href="#solutions" class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all" data-section="solutions">
+              解决方案
+              <svg class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <div class="mega-panel absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="w-[480px] rounded-2xl border border-white/10 bg-navy-900/95 backdrop-blur-xl shadow-2xl shadow-black/50 p-6">
+                <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">{megaMenuData.solutions.title}</h4>
+                <div class="space-y-2">
+                  {megaMenuData.solutions.items.map((item) => (
+                    <a href={item.href} class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                      <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={item.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="font-semibold text-white">{item.name}</div>
+                        <div class="text-sm text-gray-400">{item.desc}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery dropdown -->
+          <div class="mega-menu-item relative group">
+            <a href="#delivery" class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all" data-section="delivery">
+              交付
+              <svg class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <div class="mega-panel absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="w-[360px] rounded-2xl border border-white/10 bg-navy-900/95 backdrop-blur-xl shadow-2xl shadow-black/50 p-6">
+                <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">{megaMenuData.delivery.title}</h4>
+                <div class="space-y-2">
+                  {megaMenuData.delivery.items.map((item, i) => (
+                    <a href="#delivery" class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                      <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-electric-600 text-white text-sm font-bold">
+                        {String(i + 1).padStart(2, '0')}
+                      </div>
+                      <div>
+                        <div class="font-semibold text-white">{item.name}</div>
+                        <div class="text-sm text-gray-400">{item.desc}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple nav links -->
+          <a href="#advantages" class="nav-link px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all" data-section="advantages">优势</a>
+          <a href="#about" class="nav-link px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all" data-section="about">关于</a>
+          <a href="#contact" class="nav-link px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all" data-section="contact">联系我们</a>
         </nav>
 
         <div class="flex items-center gap-4">
           <a href="#contact" class="hidden rounded-xl bg-electric-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-electric-500/25 transition-all hover:bg-electric-400 hover:shadow-electric-400/30 sm:block">
             预约沟通
           </a>
-          <button class="lg:hidden text-gray-300 hover:text-white" onclick="openMobileMenu()" aria-label="打开菜单">
+          <button class="lg:hidden p-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" onclick="openMobileMenu()" aria-label="打开菜单">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -245,6 +248,9 @@ const contact = {
         </div>
       </div>
     </header>
+
+    <!-- Spacer for fixed header -->
+    <div class="h-16"></div>
 
     <!-- Hero -->
     <section class="relative overflow-hidden">
@@ -545,8 +551,73 @@ const contact = {
       </div>
     </section>
 
+    <!-- About -->
+    <section id="about" class="relative py-20 sm:py-28">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/30 to-transparent"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-white sm:text-4xl mb-6">关于格物数衍</h2>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              {company.name}专注于工业数字化转型领域，致力于为制造企业提供从数据采集到业务应用的全栈解决方案。
+            </p>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              我们以工业数据采集为底座，贯通MES生产执行主线，协同ERP运营管理辅线，帮助企业实现设备互联、过程透明与全程可追溯，推动智能制造落地。
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center gap-2 text-gray-300">
+                <svg class="h-5 w-5 text-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>产品化交付</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-300">
+                <svg class="h-5 w-5 text-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>持续迭代</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-300">
+                <svg class="h-5 w-5 text-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>专业服务</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+              <div class="text-center mb-8">
+                <div class="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-electric-500 to-cyan-500 shadow-xl shadow-electric-500/30 mb-4">
+                  <span class="text-3xl font-bold text-white">{company.short[0]}</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">{company.short}</h3>
+                <p class="text-sm text-gray-400 mt-1">{company.tagline}</p>
+              </div>
+              <div class="space-y-4 text-sm">
+                <div class="flex items-center justify-between py-3 border-t border-white/10">
+                  <span class="text-gray-400">公司全称</span>
+                  <span class="text-white font-medium">{company.name}</span>
+                </div>
+                <div class="flex items-center justify-between py-3 border-t border-white/10">
+                  <span class="text-gray-400">所在地</span>
+                  <span class="text-white font-medium">广东省东莞市</span>
+                </div>
+                <div class="flex items-center justify-between py-3 border-t border-white/10">
+                  <span class="text-gray-400">业务领域</span>
+                  <span class="text-white font-medium">工业数字化转型</span>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative -->
+            <div class="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="relative py-20 sm:py-28">
+    <section id="faq" class="relative py-20 sm:py-28">
       <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/50 to-transparent"></div>
       <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -677,8 +748,9 @@ const contact = {
       </div>
     </footer>
 
-    <!-- Mobile menu script -->
+    <!-- Navigation and Menu Scripts -->
     <script is:inline>
+      // Mobile menu open/close
       function openMobileMenu() {
         document.getElementById('mobile-menu').classList.remove('hidden');
         document.body.style.overflow = 'hidden';
@@ -687,6 +759,96 @@ const contact = {
         document.getElementById('mobile-menu').classList.add('hidden');
         document.body.style.overflow = '';
       }
+
+      // Mobile menu collapsible sub-menus
+      document.querySelectorAll('.mobile-nav-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const target = document.getElementById(targetId);
+          const arrow = this.querySelector('svg');
+
+          if (target.classList.contains('hidden')) {
+            target.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+          } else {
+            target.classList.add('hidden');
+            arrow.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+
+      // IntersectionObserver for active section highlighting
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+
+            // Remove active state from all nav links
+            navLinks.forEach(link => {
+              link.classList.remove('text-white', 'bg-white/10');
+              link.classList.add('text-gray-300');
+            });
+
+            // Add active state to matching nav link
+            const activeLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+            if (activeLink) {
+              activeLink.classList.remove('text-gray-300');
+              activeLink.classList.add('text-white', 'bg-white/10');
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Smooth scroll with offset for fixed header
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const headerHeight = document.getElementById('site-header').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Header background opacity on scroll
+      const header = document.getElementById('site-header');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 50) {
+          header.classList.add('bg-navy-950/90', 'border-white/10');
+          header.classList.remove('bg-navy-950/70', 'border-white/5');
+        } else {
+          header.classList.remove('bg-navy-950/90', 'border-white/10');
+          header.classList.add('bg-navy-950/70', 'border-white/5');
+        }
+
+        lastScroll = currentScroll;
+      });
     </script>
   </body>
 </html>
