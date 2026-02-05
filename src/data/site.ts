@@ -1,9 +1,11 @@
 export const company = {
   name: "东莞格物数衍科技有限公司",
-  short: "格物",
+  short: "格物数衍",
   slogan: "让数据驱动生产，让制造更智能",
   tagline: "工业数据采集与MES解决方案专家",
 };
+
+
 
 export const nav = [
   { href: "#products", label: "产品" },
@@ -234,8 +236,7 @@ export const faqs = [
 
 export const contact = {
   name: company.short,
-  phone: "（占位）",
-  email: "（占位）",
-  address: "广东省东莞市（具体地址占位）",
-  wechat: "（企业微信占位）",
+  phone: "17502089157",
+  email: "developer@gewulogic.com",
+  address: "广东省东莞市松山湖园区科技四路19号1栋320室",
 };
